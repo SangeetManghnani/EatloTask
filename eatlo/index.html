@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+Template Name: Abele
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html ng-app="EatloApp">
+<head>
+<title>Eatlo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="layout/styles/style.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+</head>
+    
+<body id="top" ng-controller="MenuController as menu">
+<div class="wrapper row1" style="background-color : rgb(233, 119, 112); border-color : rgb(233, 119, 112);">
+  <header id="header" class="clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html"><img src="images/demo/backgrounds/Eatlo_Logo_square.png" style ="padding-bottom: 3px;"/></a></h1>
+    </div>
+      <div class="fl_right" id="glyphs">
+               <img onclick="window.open('https://www.facebook.com/eatloapp')" src="images/demo/glyphicons/facebook.png" height="50px" width="50px" alt="Android" style="width: 54px;">
+          <img onclick="window.open('https://twitter.com/eatloapp')" src="images/demo/glyphicons/twitter.png" height="50px" width="50px" alt="Android" style ="width: 54px;">
+              <img onclick="window.open('http://www.eatloapp.com/app')" src="images/demo/glyphicons/android.png" height="50px" width="50px" alt="Android" style ="width: 54px;">  
+         <img onclick="window.open('http://about.eatloapp.com/ios')" src="images/demo/glyphicons/apple.png" alt="Apple" height="50px" width="50px" style ="width: 54px;">
+      </div>
+  </header>
+    
+</div>
+<div class="wrapper row2 bgded" >
+  <div class="overlay" style="background-color : white ;">
+      <div id = "tabs">
+            <a href="#" ng-click="vegfilter={}" class="action-button shadow animate blue">All</a>
+            <a href="#" ng-click="vegfilter={type:0}" class="action-button shadow animate green">Veg</a>
+            <a href="#" ng-click="vegfilter={type:1}" class="action-button shadow animate red">Non Veg</a>
+      </div>
+<div id="intro" class="clear">
+    <li ng-repeat="m in menu.products | filter:vegfilter" style="height: 0px;">
+	    <article class="one_third">
+            <h3 class="heading"><img ng-src="{{m.image}}"></h3>
+               <ul class="nospace">
+                    <h5 style="padding-bottom: 10%">{{m.name}}</h5>
+                    <p style="padding-bottom: 5%;">{{m.descript}}</p>
+                    <p class="link"><a href="#">{{m.price | currency:"&#8377;"}}</a></p>
+               </ul>
+            </article>
+    </li>
+</div>
+</div>
+</div>
+    
+    
+    
+    <div class="wrapper row5">
+  <footer id="footer" class="clear">
+    <!-- ################################################################################################ -->
+      <ul class="footerlink">
+          <li><a href="#" style="padding: 2%; color: rgb(233, 119, 112);">Choose Location</a></li>
+           <li><a href="#" style="padding: 2%; color: rgb(233, 119, 112);">Choose Dishes</a></li>
+           <li><a href="#" style="padding: 2%;color: rgb(233, 119, 112);">Place Order</a></li>
+           <li><a href="#" style="padding: 2%;color: rgb(233, 119, 112);">Order Histor</a></li>
+           <li><a href="#" style="padding: 2%;color: rgb(233, 119, 112);">Contact Us</a></li>
+           <li><a href="#" style="padding: 2%;color: rgb(233, 119, 112);">About Us</a></li>
+      </ul>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script> 
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
